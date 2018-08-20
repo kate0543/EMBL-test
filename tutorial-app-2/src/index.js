@@ -6,7 +6,7 @@ import './index.css';
 function Square(props) {
   if (props.highlight) {
     return (
-	//When  highlight, change the three squares to red.
+//When  highlight, change the three squares to red.
       <button className="square" onClick={() => props.onClick()} style={{color: "red"}}> 
         {props.value}
       </button>
@@ -22,12 +22,12 @@ function Square(props) {
 
 class Board extends React.Component {
   renderSquare(i) {
-	  	//When someone wins, highlight the three squares that caused the win.
+//When someone wins, highlight the three squares that caused the win.
     return <Square key={i} value={this.props.squares[i]} onClick={() => this.props.onClick(i)} highlight={this.props.winnerLine.includes(i)}/>;
   }
   render() {
     var rows = [];
-	//Rewrite Board to use two loops to make the squares instead of hardcoding them.
+//Rewrite Board to use two loops to make the squares instead of hardcoding them.
     for (var i=0; i<3 ; i++){
       var row = [];
       for (var j=3*i; j<3*i+3;j++){
@@ -64,7 +64,7 @@ class Game extends React.Component {
       return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
-	//Display the location for each move in the format (col, row) in the move history list.
+//Display the location for each move in the format (col, row) in the move history list.
     const location = '('+ (Math.floor(i / 3)+1) + ',' + ((i % 3)+1) + ')';
     const desc = squares[i] + ' moved to ' + location;
     this.setState({
@@ -107,7 +107,7 @@ class Game extends React.Component {
     const moves = history.map((step,move) => {
      const desc = step.lastStep;
       if (move == this.state.stepNumber) {
-		//Bold the currently selected item in the move list.
+//Bold the currently selected item in the move list.
         return (
           <li key={move}>
             <a href="#" onClick={() => this.jumpTo(move)}><strong>{desc}</strong></a>

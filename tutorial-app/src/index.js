@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//function suqare, react to click event
+//Let users play tic-tac-toe,
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -67,6 +67,7 @@ class Game extends React.Component {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
+//Stores a game’s history as a game progresses
     this.setState({
       history: history.concat([
         {
@@ -91,6 +92,7 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
+//Allows players to review a game’s history and see previous versions of a game’s board.
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
@@ -102,6 +104,7 @@ class Game extends React.Component {
     });
 
     let status;
+//Indicates when a player has won the game
     if (winner) {
       status = "Winner: " + winner;
     } else {
@@ -129,6 +132,7 @@ class Game extends React.Component {
 
 ReactDOM.render(<Game />, document.getElementById("root"));
 
+//calculate the winner
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],

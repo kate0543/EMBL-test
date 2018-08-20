@@ -1,5 +1,5 @@
 # EMBL-test
-React JS tutorial test 
+React JS tutorial test code https://github.com/kate0543/EMBL-test.git
   
 This folder contains two versions of the tic tac toe game web app.  
 tutorial-app is the first commit of the game which realised all the basic functions.  

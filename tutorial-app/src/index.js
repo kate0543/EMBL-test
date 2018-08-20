@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+//function suqare, react to click event
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -9,6 +10,7 @@ function Square(props) {
     </button>
   );
 }
+
 
 class Board extends React.Component {
   renderSquare(i) {
